@@ -1,5 +1,6 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+import { regiserUserPage } from '../pages/registerUserPage';
 
 test.beforeEach(async ({page}) => {
   await page.goto('https://front.serverest.dev/login');
@@ -14,11 +15,10 @@ test.beforeEach(async ({page}) => {
 test('register user', async ({page}) => {
 
     await page.locator('a[data-testid="cadastrarUsuarios"]').click()
-    await page.locator('input[id="nome"]').fill('BRUNO TESTE')
-    await page.locator('input[id="email"]').fill('BRUNO@QA.COM')
-    await page.locator('input[id="password"]').fill('teste')
-    await page.locator('button[data-testid="cadastrarUsuario"]').click()
+    const registerUserPage = new regiserUserPage(page);
+    registerUserPage.fillFormNormalUser('bruno teste', 'bruno@qa.com', 'teste')
+    const locator = page.locator('//td[text()="bruno teste"]')
 
-
+    await expect(locator).toContainText('bruno teste')
   
   })
