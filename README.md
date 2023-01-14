@@ -1,5 +1,5 @@
 # playwrightPOC
-Sample POC using playwright tests in parallel
+Sample POC using playwright with tests in parallel
 
 ## Getting Started
 

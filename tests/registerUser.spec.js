@@ -1,6 +1,6 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-import { regiserUserPage } from '../pages/registerUserPage';
+import { registerUserPage } from '../pages/registerUserPage';
 import { uniqueNamesGenerator, names } from 'unique-names-generator';
 import { faker } from '@faker-js/faker';
 
@@ -26,8 +26,8 @@ test.beforeEach(async ({page}) => {
 test('register normal user', async ({page}) => {
 
     await page.locator('a[data-testid="cadastrarUsuarios"]').click()
-    const registerUserPage = new regiserUserPage(page);
-    registerUserPage.fillFormNormalUser(nameFake, emailFake, 'teste', false)
+    const register = new registerUserPage(page);
+    register.fillFormNormalUser(nameFake, emailFake, 'teste', false)
     const locator = page.locator(`//td[text()="${nameFake}"]`)
     
     await expect(locator).toContainText(nameFake)
@@ -37,8 +37,8 @@ test('register normal user', async ({page}) => {
   test('register administrator user', async ({page}) => {
 
     await page.locator('a[data-testid="cadastrarUsuarios"]').click()
-    const registerUserPage = new regiserUserPage(page);
-    registerUserPage.fillFormNormalUser(nameFake, emailFake, 'teste', true)
+    const register = new registerUserPage(page);
+    register.fillFormNormalUser(nameFake, emailFake, 'teste', true)
     const locator = page.locator(`//td[text()="${nameFake}"]`)
 
     await expect(locator).toContainText(nameFake)
