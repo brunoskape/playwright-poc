@@ -1,5 +1,5 @@
 # playwrightPOC
-Sample POC using playwright with tests in parallel
+Sample POC using playwright with tests (API / e2e) in parallel
 
 ## Getting Started
 
@@ -7,6 +7,7 @@ Execute in terminal:
 
 - git clone https://github.com/brunoskape/playwrightPOC.git
 - npm i playwright@latest
+- npm i @faker-js/faker   
 - npx playwright test 
 - npx playwright show-report
 
