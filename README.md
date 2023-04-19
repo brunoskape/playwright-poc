@@ -1,4 +1,5 @@
 # playwrightPOC
+This is a sample project to demonstrate Playwright Test usage, running tests against ServeRest API and Front-end.
 Sample POC using playwright with tests (API / e2e) in parallel
 
 ## Getting Started

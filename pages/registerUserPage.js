@@ -22,4 +22,6 @@ export class registerUserPage {
     await this.page.locator('button[data-testid="cadastrarUsuario"]').click()
     
   }
+
+
 }
