@@ -13,7 +13,6 @@ export class loginPage {
    async login(email, password) {
     await this.email.fill(email)
     await this.password.fill(password)
-
     await this.button.click()
     
   }
